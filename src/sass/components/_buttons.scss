@@ -1,0 +1,39 @@
+
+.btn {
+    padding: 5px;
+    background-color: transparent;
+    border-radius: 5px;
+    margin: 5px;
+    border: 1px solid #010101;
+    cursor: pointer;
+    transition: all .5s;
+}
+.btn:hover {
+    background-color: $color-yellow;
+}
+.btn img{
+    height: 15px;
+    width: 15px;
+    padding: 0 5px;
+}
+.btn-small {
+    background-color: $color-yellow;
+    padding: 10px;
+}
+.btn-small img {
+    height: 15px;
+    width: 15px;
+}
+
+.btn-filter {
+    border-radius: 25px;
+    margin: 0 15px 25px 15px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+}
+
+.btn-links {
+    font-size: 14px;
+    padding: 5px 15px;
+}

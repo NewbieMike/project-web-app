@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App project</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--Navigation Bar-->
+    <nav class="navigation-bar">
+        <div class="navigation-container">
+            <ul class="navigation-list">
+                <li class="nav-title"><a  class="nav-link hamburger-menu"><img src="./images/icons/arrow-right.svg"></a></li>
+                <li class="nav-title"><a href="#" class="nav-link">$ 1.100.000.-<img src="./images/icons/wallet.svg"></a></li>
+                <li class="nav-title"><a href="#" class="nav-link"><img src="./images/icons/notification.svg"></a></li>
+                <li class="nav-title"><a href="#" class="nav-link">User Name <img src="./images/icons/login.svg"></a></li>
+                <li class="nav-title"><a href="#" class="nav-link"><img src="./images/icons/quit.svg"></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--Vertical Navigation Bar-->
+    <nav class="vertical-bar">
+        <div class="vertical-bar-container">
+            <div class="app-name">Working Bee!<img src="./images/icons/arrow-left.svg"></div>
+            <div class="hamburger-icon"></div>
+        </div>
+        <div class="vertical-bar-container">
+            <ul class="navigation-list">
+                <li class="nav-title"><a href="#home" class="nav-link"><img src="./images/icons/general.svg">Home</a></li>
+                <li class="nav-title"><a href="#details" class="nav-link"><img src="./images/icons/details.svg">Details</a></li>
+                <li class="nav-title"><a href="#links" class="nav-link"><img src="./images/icons/links.svg">Links</a></li>
+                <li class="nav-title"><a href="#banners" class="nav-link"><img src="./images/icons/banners.svg">Banners</a></li>
+                <li class="nav-title"><a href="#personal_data" class="nav-link"><img src="./images/icons/personaldata.svg">Personal data</a></li>
+                <li class="nav-title"><a href="#payout" class="nav-link"><img src="./images/icons/payout.svg">Payout</a></li>
+                <li class="nav-title"><a href="#postback" class="nav-link"><img src="./images/icons/postback.svg">Postback</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container" id="pages">
+        <!--Sectio General statistic-->
+        <section class="section_general_statistic" id="home">
+            <h2 class="section-title">general statistic</h2>
+            <div  class="main-container">
+                <div class="date-container">
+                    <a class="btn btn-small"><img src="./images/icons/calendar.svg"></a>
+                    <input class="date-picker" placeholder="Enter Start Date">
+                    <input class="date-picker" placeholder="Enter End Date">
+                    <a class="btn btn-small"><img src="./images/icons/refresh.svg"></a>
+                </div>
+                <div class="data-values">
+                    <div class="data-container">
+                        <p class="data-name">Named Data</p>
+                        <p class="data-value">111</p>
+                    </div>
+                    <div class="data-container">
+                        <p class="data-name">Named Data</p>
+                        <p class="data-value">111</p>
+                    </div>
+                    <div class="data-container">
+                        <p class="data-name">Named Data</p>
+                        <p class="data-value">111</p>
+                    </div>
+                    <div class="data-container">
+                        <p class="data-name">Named Data</p>
+                        <p class="data-value">111</p>
+                    </div>
+                    <div class="chart-display">
+                        <p class="data-name">Actual chart</p>
+                        <div class="filter-buttons">
+                            <a href="#" class="btn btn-filter">Filter I <img src="./images/icons/wallet.svg"></a>
+                            <a href="#" class="btn btn-filter">Filter II <img src="./images/icons/positive.svg"></a>
+                            <a href="#" class="btn btn-filter">Filter III <img src="./images/icons/payout.svg"></a>
+                        </div>
+                        <img class="chart-img" src="./images/chart.jpg">
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="section_links" id="links">
+            <h2 class="section-title">Links</h2>
+            <a href="#" class="btn btn-links">+ add link</a>
+            <div class="link-list" id="link-list">
+
+            </div>
+            <a href="#" class="btn btn-links">+ add link</a>
+        </section>
+    </div>
+    <script id="template-menu-links" type="text/x-handlebars-template">          
+        <div class="link-container">
+            <div class="link-name">{{ name }}</div>
+            
+            <a href="#" class="link-page">{{ link }}</a>
+            <div class="icons-hover" id="icons-hover">
+                <a href="#"><img src="./images/icons/links.svg"></a>
+                <a href="#"><img src="./images/icons/close.svg"></a>
+            </div>
+        </div>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
