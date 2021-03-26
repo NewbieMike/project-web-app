@@ -43,8 +43,8 @@
     </nav>
     
     <div class="container" id="pages">
-        <!--Sectio General statistic-->
-        <section class="section_general_statistic" id="home">
+        <!--Section Home-->
+        <section class="section_display section_home" id="home">
             <h2 class="section-title">general statistic</h2>
             <div  class="main-container">
                 <div class="date-container">
@@ -81,10 +81,18 @@
                     </div>
                 </div>
             </div>
-            
         </section>
+        <!--Section Details-->
+        <section class="section_display section_links" id="details">
+            <h2 class="section-title">Details</h2>
+            <a href="#" class="btn btn-links">+ add link</a>
+            <div class="details-list" id="details-list">
 
-        <section class="section_links" id="links">
+            </div>
+            <a href="#" class="btn btn-links">+ add link</a>
+        </section>
+        <!--Section Links-->
+        <section class="section_display section_links" id="links">
             <h2 class="section-title">Links</h2>
             <a href="#" class="btn btn-links">+ add link</a>
             <div class="link-list" id="link-list">
@@ -94,6 +102,17 @@
         </section>
     </div>
     <script id="template-menu-links" type="text/x-handlebars-template">          
+        <div class="link-container">
+            <div class="link-name">{{ name }}</div>
+            
+            <a href="#" class="link-page">{{ link }}</a>
+            <div class="icons-hover" id="icons-hover">
+                <a href="#"><img src="./images/icons/links.svg"></a>
+                <a href="#"><img src="./images/icons/close.svg"></a>
+            </div>
+        </div>
+    </script>
+    <script id="template-menu-details" type="text/x-handlebars-template">          
         <div class="link-container">
             <div class="link-name">{{ name }}</div>
             

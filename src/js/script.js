@@ -20,7 +20,11 @@ insideHamburgerIcon.addEventListener('click', () => {
   verticalNavigation.classList.toggle('change');
   containerChange.classList.toggle('change');
 });
-
+/*fetch('')
+    .then((response) => response.text())
+    .then((html) => {
+        document.querySelector("").innerHTML = html;
+    })*/
 /*function changeLinkStyle(){
   let index = sectionsPicker.length;
 
@@ -65,9 +69,11 @@ window.document.addEventListener('scroll', onScroll );*/
 const select = {
   templateOf: {
     menuLinkList: '#template-menu-links',
+    menuDetailsList: '#template-menu-links',
   },
   containerOf: {
     links: '.link-list',
+    details: '.details-list',
     pages: '#pages',
   },
   all: {
@@ -82,6 +88,37 @@ const select = {
 const templates = {
   menuDropdownList: Handlebars.compile(document.querySelector(select.templateOf.menuLinkList).innerHTML),
 };
+
+class DetailsList {
+  constructor(data){
+    const thisDetails = this;
+    thisDetails.data = data;
+
+    /* Functions Initializer*/
+    thisDetails.render();
+
+  }
+
+  render(){
+    const thisDetails = this;
+
+    thisDetails.data = dataSource.details;
+
+    for (let link of thisDetails.data){
+      const linkCart = select.templateOf.menuDetailsList;
+
+      const linksTemplate = Handlebars.compile(document.querySelector(linkCart).innerHTML);
+
+      const generatedHTML = linksTemplate(link);
+
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+      console.log(generatedDOM)
+      const linksContainer = document.querySelector(select.containerOf.details);
+
+      linksContainer.appendChild(generatedDOM);
+    }
+  }
+}
 
 class LinkList {
   constructor(data){
@@ -142,7 +179,7 @@ class LinkList {
           const clickedElement = this;
           event.preventDefault();
           const id = clickedElement.getAttribute('href').replace('#', '');
-          
+
         thisApp.activatePage(id);
 
         window.location.hash = '#/' + id;
@@ -165,6 +202,7 @@ class LinkList {
     },
 
     initProject: function(){
+      new DetailsList();
       new LinkList();
     }
   };
