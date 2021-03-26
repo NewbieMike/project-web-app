@@ -6,7 +6,7 @@ const verticalNavigation = document.querySelector('.vertical-bar');
 const containerChange = document.querySelector('.container');
 const insideHamburgerIcon = document.querySelector('.app-name img');
 
-const sectionsPicker = document.querySelectorAll('section');
+//const sectionsPicker = document.querySelectorAll('section');
 
 
 
@@ -85,9 +85,7 @@ const select = {
     links: '.vertical-bar-container a',
   },
 };
-const templates = {
-  menuDropdownList: Handlebars.compile(document.querySelector(select.templateOf.menuLinkList).innerHTML),
-};
+
 
 class DetailsList {
   constructor(data){
