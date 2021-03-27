@@ -4,13 +4,13 @@
   right: 0;
   top: 0;
   width: 100%;
-    background-color: $color-white;
+  background-color: $color-white;
 
-    &.nav-title:first-child{
-        position: absolute;
-        left: -10px;
-        cursor: pointer;
-    }
+  &.nav-title:first-child{
+    position: absolute;
+    left: -10px;
+    cursor: pointer;
+  }
 };
 
 .navigation-list {

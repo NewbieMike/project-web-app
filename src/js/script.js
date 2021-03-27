@@ -64,90 +64,90 @@ window.addEventListener('scroll', changeLinkStyle());*/
 window.document.addEventListener('scroll', onScroll );*/
 
 {
-  'use strict'
+  'use strict';
 
-const select = {
-  templateOf: {
-    menuLinkList: '#template-menu-links',
-    menuDetailsList: '#template-menu-links',
-  },
-  containerOf: {
-    links: '.link-list',
-    details: '.details-list',
-    pages: '#pages',
-  },
-  all: {
-    menuProducts: '#product-list > .product',
-    menuProductsActive: '#product-list > .product.active',
-    formInputs: 'input, select',
-  },
-  nav: {
-    links: '.vertical-bar-container a',
-  },
-};
+  const select = {
+    templateOf: {
+      menuLinkList: '#template-menu-links',
+      menuDetailsList: '#template-menu-links',
+    },
+    containerOf: {
+      links: '.link-list',
+      details: '.details-list',
+      pages: '#pages',
+    },
+    all: {
+      menuProducts: '#product-list > .product',
+      menuProductsActive: '#product-list > .product.active',
+      formInputs: 'input, select',
+    },
+    nav: {
+      links: '.vertical-bar-container a',
+    },
+  };
 
 
-class DetailsList {
-  constructor(data){
-    const thisDetails = this;
-    thisDetails.data = data;
+  class DetailsList {
+    constructor(data){
+      const thisDetails = this;
+      thisDetails.data = data;
 
-    /* Functions Initializer*/
-    thisDetails.render();
+      /* Functions Initializer*/
+      thisDetails.render();
 
-  }
+    }
 
-  render(){
-    const thisDetails = this;
+    render(){
+      const thisDetails = this;
 
-    thisDetails.data = dataSource.details;
+      thisDetails.data = dataSource.details;
 
-    for (let link of thisDetails.data){
-      const linkCart = select.templateOf.menuDetailsList;
+      for (let link of thisDetails.data){
+        const linkCart = select.templateOf.menuDetailsList;
 
-      const linksTemplate = Handlebars.compile(document.querySelector(linkCart).innerHTML);
+        const linksTemplate = Handlebars.compile(document.querySelector(linkCart).innerHTML);
 
-      const generatedHTML = linksTemplate(link);
+        const generatedHTML = linksTemplate(link);
 
-      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
-      console.log(generatedDOM)
-      const linksContainer = document.querySelector(select.containerOf.details);
+        const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+        console.log(generatedDOM);
+        const linksContainer = document.querySelector(select.containerOf.details);
 
-      linksContainer.appendChild(generatedDOM);
+        linksContainer.appendChild(generatedDOM);
+      }
     }
   }
-}
 
-class LinkList {
-  constructor(data){
-    const thisLink = this;
-    thisLink.data = data;
+  class LinkList {
+    constructor(data){
+      const thisLink = this;
+      thisLink.data = data;
 
-    /* Functions Initializer*/
-    thisLink.render();
+      /* Functions Initializer*/
+      thisLink.render();
 
-  }
+    }
 
-  render(){
-    const thisLink = this;
+    render(){
+      const thisLink = this;
 
-    thisLink.data = dataSource.links;
+      thisLink.data = dataSource.links;
 
-    for (let link of thisLink.data){
-      const linkCart = select.templateOf.menuLinkList;
+      for (let link of thisLink.data){
+        const linkCart = select.templateOf.menuLinkList;
 
-      const linksTemplate = Handlebars.compile(document.querySelector(linkCart).innerHTML);
+        const linksTemplate = Handlebars.compile(document.querySelector(linkCart).innerHTML);
 
-      const generatedHTML = linksTemplate(link);
+        const generatedHTML = linksTemplate(link);
 
-      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+        const generatedDOM = utils.createDOMFromHTML(generatedHTML);
 
-      const linksContainer = document.querySelector(select.containerOf.links);
+        const linksContainer = document.querySelector(select.containerOf.links);
 
-      linksContainer.appendChild(generatedDOM);
+        linksContainer.appendChild(generatedDOM);
+      }
     }
   }
-}
 
   const app = {
     initPages: function(){
@@ -178,10 +178,10 @@ class LinkList {
           event.preventDefault();
           const id = clickedElement.getAttribute('href').replace('#', '');
 
-        thisApp.activatePage(id);
+          thisApp.activatePage(id);
 
-        window.location.hash = '#/' + id;
-      });
+          window.location.hash = '#/' + id;
+        });
       }
     },
 
