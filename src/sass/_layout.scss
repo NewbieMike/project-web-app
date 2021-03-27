@@ -22,9 +22,9 @@ a {
 #pages {
     > * {
       display: none;
-    }
+    };
     
     > .active {
       display: block;
-    }
+    };
   }
