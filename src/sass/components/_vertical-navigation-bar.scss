@@ -8,22 +8,22 @@
   background-color: $background-color;
   transition: left 0.5s;
 
-  &.vertical-bar-container {
+  .vertical-bar-container {
     border-bottom: 0.5px solid $color-gray;
   };
 
-  &.navigation-list {
+  .navigation-list {
     display: block;
         
   }
 
-  &.app-name {
+  .app-name {
     font-size: 26px;
     color: $color-yellow;
     font-family: 'Pacifico', cursive;
     margin: 15px 20px;
 
-    &img {
+    img {
       height: 30px;
       width: 34px;
       padding: 0 0 0 10px;
@@ -32,31 +32,31 @@
     }
   };
 
-  &.nav-title{
+  .nav-title{
     display: flex;
     justify-content: flex-start;
         
   };
 
-  &.nav-link {
+  .nav-link {
     color: $color-white;
     border: none;
     padding: 5px;
     width: 100%;
     margin: 0;
 
-    &img{
+    img{
       filter: invert(48%) sepia(79%) saturate(0%) hue-rotate(86deg) brightness(118%) contrast(119%);
     }
         
   };
 
-  &.nav-link.active {
+  .nav-link.active {
     background-color: $color-yellow-dark;
     color: #010101;
 
-    &img{
-      filter: invert(48%) sepia(100%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    img{
+      filter: invert(48%) sepia(100%) saturate(100%) hue-rotate(86deg) brightness(100%) contrast(100%);
     }
   }
 }

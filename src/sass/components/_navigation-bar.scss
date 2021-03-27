@@ -6,7 +6,7 @@
   width: 100%;
   background-color: $color-white;
 
-  &.nav-title:first-child{
+  .nav-title:first-child{
     position: absolute;
     left: -10px;
     cursor: pointer;
