@@ -1,43 +1,42 @@
 .section_links {
     text-align: center;
     padding-bottom: 40px;
-}
+};
 .details-list,
 .link-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+};
 .link-container {
     display: flex;
     justify-content: space-around;
     width: 60%;
     padding: 10px 0;
-}
+};
 .link-container:first-of-type{
     margin-top: 25px;
-}
+};
 .link-container:last-of-type{
     margin-bottom: 25px;
-}
+};
 .link-container:hover {
     background-color: $color-gray;
     color: $color-orange;
-}
+};
 .link-container:hover .icons-hover {
     opacity: 1;
-}
+};
 .link-container:hover .link-page {
     color: $color-orange;
-}
+};
 .icons-hover{
     display: flex;
     opacity: 0;
     align-items: center;
-}
+};
 .icons-hover img {
     width: 14px;
     padding: 5px 10px;
-    
-}
+};
