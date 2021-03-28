@@ -100,6 +100,13 @@
             </div>
             <a href="#" class="btn btn-links">+ add link</a>
         </section>
+        <!--Section Inputs-->
+        <section class="section_display section_form" id="personal_data">
+            <h2 class="section-title">Personal Data Form</h2>
+            <div class="inputs-list" id="input-list">
+
+            </div>
+        </section>
     </div>
     <script id="template-menu-links" type="text/x-handlebars-template">          
         <div class="link-container">
@@ -122,6 +129,12 @@
                 <a href="#"><img src="./images/icons/close.svg"></a>
             </div>
         </div>
+    </script>
+    <script id="template-menu-inputs" type="text/x-handlebars-template">   
+        <div class="input-container">
+            <h4 class="input-label">{{ name }}</h4>
+            <input type="text" placeholder="Enter {{ name }}">
+        </div>       
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="js/functions.js"></script>

@@ -69,11 +69,13 @@ window.document.addEventListener('scroll', onScroll );*/
   const select = {
     templateOf: {
       menuLinkList: '#template-menu-links',
-      menuDetailsList: '#template-menu-links',
+      menuDetailsList: '#template-menu-details',
+      menuInputsList: '#template-menu-inputs',
     },
     containerOf: {
       links: '.link-list',
       details: '.details-list',
+      inputs: '.inputs-list',
       pages: '#pages',
     },
     all: {
@@ -149,6 +151,37 @@ window.document.addEventListener('scroll', onScroll );*/
     }
   }
 
+  class InputList {
+    constructor(data){
+      const thisInput = this;
+      thisInput.data = data;
+
+      /* Functions Initializer*/
+      thisInput.render();
+
+    }
+
+    render(){
+      const thisInput = this;
+
+      thisInput.data = dataSource.input;
+
+      for (let input of thisInput.data){
+        const inputCart = select.templateOf.menuInputsList;
+
+        const inputTemplate = Handlebars.compile(document.querySelector(inputCart).innerHTML);
+
+        const generatedHTML = inputTemplate(input);
+
+        const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+        console.log(generatedDOM)
+        const inputsContainer = document.querySelector(select.containerOf.inputs);
+        console.log(inputsContainer)
+        inputsContainer.appendChild(generatedDOM);
+      }
+    }
+  }
+
   const app = {
     initPages: function(){
       const thisApp = this;
@@ -202,6 +235,7 @@ window.document.addEventListener('scroll', onScroll );*/
     initProject: function(){
       new DetailsList();
       new LinkList();
+      new InputList();
     }
   };
   app.initPages();
