@@ -174,9 +174,9 @@ window.document.addEventListener('scroll', onScroll );*/
         const generatedHTML = inputTemplate(input);
 
         const generatedDOM = utils.createDOMFromHTML(generatedHTML);
-        console.log(generatedDOM)
+        console.log(generatedDOM);
         const inputsContainer = document.querySelector(select.containerOf.inputs);
-        console.log(inputsContainer)
+        console.log(inputsContainer);
         inputsContainer.appendChild(generatedDOM);
       }
     }

@@ -1,45 +1,49 @@
 .inputs-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 };
 
 .input-container {
-    display: flex;
-    margin: 10px;
-    width: 30%;
-    align-items: center;
-    position: relative;
+  display: flex;
+  margin: 10px;
+  width: 30%;
+  align-items: center;
+  position: relative;
 }
+
 .input-container h4 {
-    flex: 1;
+  flex: 1;
 }
+
 .input-container input {
-    flex: 2;
-    outline: 0;
-    border-radius: 5px;
-    border: 1px solid $color-yellow;
-    transition: all 1s;
+  flex: 2;
+  outline: 0;
+  border-radius: 5px;
+  border: 1px solid $color-yellow;
+  transition: all 1s;
 }
+
 .input-container input:hover {
-    background-color: $color-yellow;
+  background-color: $color-yellow;
 }
+
 .input-label {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .input-container:nth-child(4)::after,
 .input-container:nth-child(7)::after,
 .input-container:nth-child(8)::after,
 .input-container:nth-child(10)::after {
-    content: "";
-    width: 332%;
-    height: 1.5px;
-    background-color: $color-gray;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  content: "";
+  width: 332%;
+  height: 1.5px;
+  background-color: $color-gray;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 

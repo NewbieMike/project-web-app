@@ -89,34 +89,34 @@ dataSource.links = [
 ];
 
 dataSource.input = [
-{
-    name: "Name",
-},
-{
-    name: "Surname",
-},
-{
-    name: "E-mail",
-},
-{
-    name: "Phone number",
-},
-{
-    name: "Skype",
-},
-{
-    name: "ICQ",
-},
-{
-    name: "Msn",
-},
-{
-    name: "Wallet",
-},
-{
-    name: "Password",
-},
-{
-    name: "Repeat password",
-},
+  {
+    name: 'Name',
+  },
+  {
+    name: 'Surname',
+  },
+  {
+    name: 'E-mail',
+  },
+  {
+    name: 'Phone number',
+  },
+  {
+    name: 'Skype',
+  },
+  {
+    name: 'ICQ',
+  },
+  {
+    name: 'Msn',
+  },
+  {
+    name: 'Wallet',
+  },
+  {
+    name: 'Password',
+  },
+  {
+    name: 'Repeat password',
+  },
 ];
