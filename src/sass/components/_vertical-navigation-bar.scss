@@ -64,3 +64,52 @@
 .change.vertical-bar{
   left: 0;
 }
+
+.navigation-title {
+  color: $color-yellow;
+  font-size: 14px;
+  padding: 16px;
+  display: flex;
+
+  img{
+    width: 15px;
+    height: 15px;
+    padding: 1px 5px;
+    filter: invert(48%) sepia(100%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  }
+}
+
+.contact-container {
+  display: flex;
+  color: $color-white;
+  padding: 2px 16px;
+  font-size: 14px;
+  align-items: center;
+  cursor: pointer;
+
+  .contact-name {
+    margin-right: 10px;
+  }
+}
+
+.contact-img {
+  position: relative;
+  
+  img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+}
+
+.contact-img::after {
+  content: "";
+  position: absolute;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: green;
+  top: 2px;
+  right: 0;
+  z-index: 15;
+}
