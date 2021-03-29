@@ -42,14 +42,25 @@
         </div>
         <div class="vertical-bar-container">
             <div class="navigation-title">Messages <img src="./images/icons/message.svg"></div>
-            <div class="contact-container">
-                <div class="contact-name">Manager Name</div>
+            <div class="contact-container" id="Employee_1">
+                <div class="contact-name" >Manager Name</div>
+                <div class="contact-img"><img src="./images/manager-img.jpg"></div>
+            </div>
+            <div class="contact-container" id="Employee_2">
+                <div class="contact-name">Manager Name 2</div>
                 <div class="contact-img"><img src="./images/manager-img.jpg"></div>
             </div>
         </div>
     </nav>
     
     <div class="container" id="pages">
+        <div class="modal">
+            <div class="message-container">
+                <h2 class="section-title">Chat with your team!</h2>
+                <h5 class="emp_name"></h5>
+                <h5 class="emp_img"></h5>
+            </div>
+        </div>
         <!--Section Home-->
         <section class="section_display section_home" id="home">
             <h2 class="section-title">general statistic</h2>
@@ -114,6 +125,38 @@
 
             </div>
         </section>
+        <!--Section Payout-->
+        <section class="section_display section_payout" id="payout">
+            <h2 class="section-title">Payout history</h2>
+            <div class="date-container">
+                <a class="btn btn-small"><img src="./images/icons/calendar.svg"></a>
+                <input class="date-picker" placeholder="Enter Start Date">
+                <input class="date-picker" placeholder="Enter End Date">
+                <a class="btn btn-small"><img src="./images/icons/refresh.svg"></a>
+            </div>
+            <div class="table-container">
+                <table>  
+                    <tr>
+                        <th>Date</th>
+                        <th>Amount</th> 
+                        <th>Deal</th>
+                        <th>Account</th>
+                    </tr>
+                </table>
+                <div class="payout-table">
+
+                </div>
+                <div class="payout-page-change">
+                    <img class="btn-arrow" src="./images/icons/arrow-left.svg">
+                    <button class="active">1</button>
+                    <button class="">2</button>
+                    <button class="">3</button>
+                    <button class="">4</button>
+                    <button class="">5</button>
+                    <img class="btn-arrow" src="./images/icons/arrow-right.svg">
+                </div>
+            </div>
+        </section>
     </div>
     <script id="template-menu-links" type="text/x-handlebars-template">          
         <div class="link-container">
@@ -142,6 +185,16 @@
             <h4 class="input-label">{{ name }}</h4>
             <input type="text" placeholder="Enter {{ name }}">
         </div>       
+    </script>
+    <script id="template-menu-payouts" type="text/x-handlebars-template">  
+        <table>
+            <tr>
+                <td>{{date}}</td>
+                <td>{{amount}}</td>
+                <td>{{deal}}</td>
+                <td>{{account}}</td>
+            </tr>
+        </table>
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="js/functions.js"></script>

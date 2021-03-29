@@ -120,3 +120,61 @@ dataSource.input = [
     name: 'Repeat password',
   },
 ];
+
+dataSource.payout = [
+  {
+    date: '31.03.2021',
+    amount: '23.450 $',
+    deal: 'Deal Name',
+    account: '11 1111 11 1111 1111  11 1111',
+  },
+  {
+    date: '31.03.2021',
+    amount: '23.450 $',
+    deal: 'Deal Name',
+    account: '11 1111 11 1111 1111  11 1111',
+  },
+  {
+    date: '31.03.2021',
+    amount: '23.450 $',
+    deal: 'Deal Name',
+    account: '11 1111 11 1111 1111  11 1111',
+  },
+  {
+    date: '31.03.2021',
+    amount: '23.450 $',
+    deal: 'Deal Name',
+    account: '11 1111 11 1111 1111  11 1111',
+  },
+  {
+    date: '31.03.2021',
+    amount: '23.450 $',
+    deal: 'Deal Name',
+    account: '11 1111 11 1111 1111  11 1111',
+  },
+  {
+    date: '31.03.2021',
+    amount: '23.450 $',
+    deal: 'Deal Name',
+    account: '11 1111 11 1111 1111  11 1111',
+  },
+  {
+    date: '31.03.2021',
+    amount: '23.450 $',
+    deal: 'Deal Name',
+    account: '11 1111 11 1111 1111  11 1111',
+  },
+  {
+    date: '31.03.2021',
+    amount: '23.450 $',
+    deal: 'Deal Name',
+    account: '11 1111 11 1111 1111  11 1111',
+  },
+  {
+    date: '31.03.2021',
+    amount: '23.450 $',
+    deal: 'Deal Name',
+    account: '11 1111 11 1111 1111  11 1111',
+  },
+
+];

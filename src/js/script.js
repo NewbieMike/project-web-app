@@ -6,9 +6,6 @@ const verticalNavigation = document.querySelector('.vertical-bar');
 const containerChange = document.querySelector('.container');
 const insideHamburgerIcon = document.querySelector('.app-name img');
 
-//const sectionsPicker = document.querySelectorAll('section');
-
-
 
 
 hamburgerIcon.addEventListener('click', () => {
@@ -20,49 +17,23 @@ insideHamburgerIcon.addEventListener('click', () => {
   verticalNavigation.classList.toggle('change');
   containerChange.classList.toggle('change');
 });
-/*fetch('')
-    .then((response) => response.text())
-    .then((html) => {
-        document.querySelector("").innerHTML = html;
-    })*/
-/*function changeLinkStyle(){
-  let index = sectionsPicker.length;
 
-  while(--index && window.scrollY + 50 < sectionsPicker[index].offsetTop){
 
-    navigationLinks.forEach((link) => link.classList.remove('active'));
-    navigationLinks[index].classList.add('active');
+const modal = document.querySelector('.modal');
+const contactPick = document.querySelectorAll('.contact-container');
+
+contactPick.forEach(contact => {
+  contact.addEventListener('click', () => {
+    modal.classList.add('open');
+    const employeeName = contact.getAttribute('id');
+    document.querySelector('.emp_name').innerHTML = employeeName;
+  });
+});
+modal.addEventListener('click', (event) => {
+  if (event.target.classList.contains('modal')){
+    modal.classList.remove('open');
   }
-
-}
-changeLinkStyle();
-window.addEventListener('scroll', changeLinkStyle());*/
-
-/*function onScroll(event){
-  const navigationLinks = document.querySelectorAll('.ver-nav');
-  let scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-  
-  for( i = 0; i < navigationLinks.length; i++ ){
-    const currLink = navigationLinks[i]; 
-    const val = currLink.getAttribute('class');
-    
-    const refElement = document.querySelector('.ver-nav');
-    console.log(refElement)
-      if( refElement.offsetTop <= scrollPos && ( refElement.offsetTop + refElement.offsetHeight > scrollPos)){
-        document.querySelector('ul li').classList.remove('active');
-        currLink.classList.add('active');
-      }else{
-         currLink.classList.remove('active');
-       }
-  }
-  
-  
-                                                           
-    
-};
-
-window.document.addEventListener('scroll', onScroll );*/
-
+});
 {
   'use strict';
 
@@ -71,11 +42,13 @@ window.document.addEventListener('scroll', onScroll );*/
       menuLinkList: '#template-menu-links',
       menuDetailsList: '#template-menu-details',
       menuInputsList: '#template-menu-inputs',
+      menuPayoutList: '#template-menu-payouts',
     },
     containerOf: {
       links: '.link-list',
       details: '.details-list',
       inputs: '.inputs-list',
+      payouts: '.payout-table',
       pages: '#pages',
     },
     all: {
@@ -174,10 +147,41 @@ window.document.addEventListener('scroll', onScroll );*/
         const generatedHTML = inputTemplate(input);
 
         const generatedDOM = utils.createDOMFromHTML(generatedHTML);
-        console.log(generatedDOM);
+
         const inputsContainer = document.querySelector(select.containerOf.inputs);
-        console.log(inputsContainer);
+
         inputsContainer.appendChild(generatedDOM);
+      }
+    }
+  }
+
+  class PayoutList {
+    constructor(data){
+      const thisPayout = this;
+      thisPayout.data = data;
+
+      /* Functions Initializer*/
+      thisPayout.render();
+
+    }
+
+    render(){
+      const thisPayout = this;
+
+      thisPayout.data = dataSource.payout;
+
+      for (let payout of thisPayout.data){
+        const payoutCart = select.templateOf.menuPayoutList;
+
+        const payoutTemplate = Handlebars.compile(document.querySelector(payoutCart).innerHTML);
+
+        const generatedHTML = payoutTemplate(payout);
+
+        const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+
+        const payoutsContainer = document.querySelector(select.containerOf.payouts);
+
+        payoutsContainer.appendChild(generatedDOM);
       }
     }
   }
@@ -236,6 +240,7 @@ window.document.addEventListener('scroll', onScroll );*/
       new DetailsList();
       new LinkList();
       new InputList();
+      new PayoutList();
     }
   };
   app.initPages();

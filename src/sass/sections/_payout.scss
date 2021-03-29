@@ -1,0 +1,32 @@
+table{
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid $color-gray;
+}
+
+td,
+th {
+  width: 25%;
+  padding: 15px;
+}
+
+tr:hover {
+  background-color: $color-yellow;
+}
+
+.payout-page-change {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  button{
+    padding: 5px 10px;
+    border: 1px solid $color-yellow;
+    cursor: pointer;
+
+    &.active {
+      background-color: $color-yellow;
+    }
+  }
+}
