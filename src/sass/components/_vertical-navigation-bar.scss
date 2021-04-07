@@ -7,7 +7,7 @@
   height: 100%;
   background-color: $background-color;
   transition: left 0.5s;
-
+  
   .vertical-bar-container {
     border-bottom: 0.5px solid $color-gray;
   };
@@ -112,4 +112,10 @@
   top: 2px;
   right: 0;
   z-index: 15;
+}
+
+@media (max-width: 768px){
+  .vertical-bar {
+    width: 100%;
+  }
 }

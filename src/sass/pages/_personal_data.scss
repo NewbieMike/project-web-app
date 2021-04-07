@@ -38,7 +38,7 @@
 .input-container:nth-child(8)::after,
 .input-container:nth-child(10)::after {
   content: "";
-  width: 332%;
+  width: 100%;
   height: 1.5px;
   background-color: $color-gray;
   position: absolute;
@@ -47,3 +47,8 @@
   transform: translate(-50%, -50%);
 }
 
+@media (max-width: 768px){
+  .input-container {
+    width: 90%;
+  }
+}

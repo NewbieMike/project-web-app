@@ -30,3 +30,14 @@ tr:hover {
     }
   }
 }
+
+.payout-table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.payout-table table {
+  width: 100%;
+  max-width: 100%;
+}

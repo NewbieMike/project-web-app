@@ -49,3 +49,13 @@
   width: 14px;
   padding: 5px 10px;
 };
+
+@media (max-width: 768px){
+  .link-container {
+    flex-direction: column;
+  }
+
+  .icons-hover {
+    justify-content: center;
+  }
+}

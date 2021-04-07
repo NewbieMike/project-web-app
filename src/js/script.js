@@ -5,7 +5,7 @@ const hamburgerIcon = document.querySelector('.hamburger-menu');
 const verticalNavigation = document.querySelector('.vertical-bar');
 const containerChange = document.querySelector('.container');
 const insideHamburgerIcon = document.querySelector('.app-name img');
-
+const verticalNavLinks = document.querySelectorAll('.vertical-bar-container .nav-link');
 
 
 hamburgerIcon.addEventListener('click', () => {
@@ -18,6 +18,11 @@ insideHamburgerIcon.addEventListener('click', () => {
   containerChange.classList.toggle('change');
 });
 
+verticalNavLinks.forEach(link =>{
+  link.addEventListener('click', () => {
+    verticalNavigation.classList.toggle('change');
+  });
+});
 
 const modal = document.querySelector('.modal');
 const contactPick = document.querySelectorAll('.contact-container');
@@ -31,6 +36,9 @@ contactPick.forEach(contact => {
 });
 modal.addEventListener('click', (event) => {
   if (event.target.classList.contains('modal')){
+    modal.classList.remove('open');
+  }
+  if (event.keyCode === 27){
     modal.classList.remove('open');
   }
 });
@@ -67,7 +75,6 @@ modal.addEventListener('click', (event) => {
       const thisDetails = this;
       thisDetails.data = data;
 
-      /* Functions Initializer*/
       thisDetails.render();
 
     }
@@ -98,7 +105,7 @@ modal.addEventListener('click', (event) => {
       const thisLink = this;
       thisLink.data = data;
 
-      /* Functions Initializer*/
+
       thisLink.render();
 
     }
@@ -129,7 +136,7 @@ modal.addEventListener('click', (event) => {
       const thisInput = this;
       thisInput.data = data;
 
-      /* Functions Initializer*/
+
       thisInput.render();
 
     }
@@ -160,7 +167,6 @@ modal.addEventListener('click', (event) => {
       const thisPayout = this;
       thisPayout.data = data;
 
-      /* Functions Initializer*/
       thisPayout.render();
 
     }
@@ -246,4 +252,68 @@ modal.addEventListener('click', (event) => {
   app.initPages();
   app.initProject();
 }
+/* eslint-env jquery */
+var owl = $('.owl-carousel');
+owl.owlCarousel({
+  loop:true,
+  nav:true,
+  margin:10,
+  responsive:{
+    0:{
+      items:1
+    },
+    600:{
+      items:3
+    },            
+    960:{
+      items:5
+    },
+    1200:{
+      items:6
+    }
+  }
+});
+owl.on('mousewheel', '.owl-stage', function (e) {
+  if (e.deltaY>0) {
+    owl.trigger('next.owl');
+  } else {
+    owl.trigger('prev.owl');
+  }
+  e.preventDefault();
+});
 
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {// eslint-disable-line no-use-before-define
+  // 1
+  type: 'bar',
+  data: {
+    // 2
+    labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'],
+    // 3
+    datasets: [{
+      // 4
+      label: 'Signups',
+      // 5
+      backgroundColor: '#8DBEC8',
+      borderColor: '#8DBEC8',
+      // 6
+      data: [ 52, 51, 41, 94, 26, 6, 72, 9, 21, 88 ],
+    },
+    {
+      label: 'FTD',
+      backgroundColor: '#F29E4E',
+      borderColor: '#F29E4E',
+      data: [ 6, 72, 1, 0, 47, 11, 50, 44, 63, 76 ],
+    },
+    {
+      label: 'Earned',
+      backgroundColor: '#71B374',
+      borderColor: '#71B374',
+      data: [ 59, 49, 68, 90, 67, 41, 13, 38, 48, 48 ],
+      // 7
+      hidden: false,
+    }]
+  },
+});
+
+console.log(chart);

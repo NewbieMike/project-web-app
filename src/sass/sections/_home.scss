@@ -64,3 +64,18 @@
 .chart-img {
   width: 100%;
 };
+
+@media (max-width: 768px){
+  .date-container{
+    flex-direction: column;
+  }
+
+  .data-values {
+    flex-direction: column;
+  }
+
+  .chart-img {
+    width: 100%;
+    height: 170px;
+  };
+}

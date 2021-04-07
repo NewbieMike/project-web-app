@@ -1,9 +1,9 @@
 .navigation-bar {
   position: fixed;
-  z-index: 10;
-  right: 0;
-  top: 0;
   width: 100%;
+  z-index: 10;
+  left: 0;
+  top: 0;
   background-color: $color-white;
 
   .nav-title:first-child{
@@ -41,3 +41,30 @@
     padding: 10px;
   }
 };
+
+@media (max-width: 768px){
+  .navigation-bar {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .nav-title:first-child{
+    cursor: pointer;
+  }
+
+  .exit-icon,
+  .nav-link {
+    margin: 0;
+    padding: 0;
+  }
+
+  .app-name img{
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 12px;
+  }
+}
+

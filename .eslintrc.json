@@ -31,6 +31,8 @@
     "globals": {
       "Handlebars": true,
       "dataSource": true,
-      "utils": true
+      "utils": true,
+      "$": true,
+      "Chart": true
     }
 }
